@@ -15,11 +15,14 @@ from scipy.stats import norm
 import scipy
 import cv2
 import itertools
-try:
-	import json as simplejson
-	from keras.models import model_from_json
-except:
-	print('KERAS NOT INSTALLED. IF YOU WANT TO USE THE CNN BASED COMPONENT CLASSIFIER (experimental) CONTACT THE DEVELOPERS')
+import  json as simplejson
+import keras
+from keras.models import model_from_json
+#try:
+	#import json as simplejson
+	#from keras.models import model_from_json
+#except:
+	#print('KERAS NOT INSTALLED. IF YOU WANT TO USE THE CNN BASED COMPONENT CLASSIFIER (experimental) CONTACT THE DEVELOPERS')
 
 def estimate_noise_mode(traces,robust_std=False,use_mode_fast=False, return_all = False):
     """ estimate the noise in the traces under assumption that signals are sparse and only positive. The last dimension should be time.
